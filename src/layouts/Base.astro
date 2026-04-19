@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title = 'Louis Kotze — Senior Full-Stack Engineer · Linux Kernel Contributor',
+  description = 'Louis Kotze — senior full-stack engineer and Linux kernel contributor. Writes code that ships upstream.',
+  canonical,
+} = Astro.props;
+
+const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="louiskotze.dev" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/" class="brand">louis kotze</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/blog">Writing</a>
+        <a href="https://github.com/louis-kotze">GitHub</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div>
+        Built with <a href="https://astro.build">Astro</a>, hosted on
+        <a href="https://pages.cloudflare.com">Cloudflare Pages</a>. Source
+        on <a href="https://github.com/louis-kotze/louiskotze.dev">GitHub</a>.
+      </div>
+      <div>
+        Code: MIT &middot; Content: CC&nbsp;BY&nbsp;4.0
+      </div>
+    </footer>
+  </body>
+</html>

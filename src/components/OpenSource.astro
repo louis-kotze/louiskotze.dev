@@ -1,0 +1,32 @@
+---
+---
+<section>
+  <h2>Open-source &amp; upstream</h2>
+  <ul>
+    <li>
+      <strong>Linux kernel (linux-wireless)</strong> &mdash; authored the
+      RTL8922AU USB RF-calibration fix
+      (<a href="https://lore.kernel.org/linux-wireless/20260416045536.817930-1-loukot@gmail.com/">v3
+      on lore</a>, Acked by Realtek&rsquo;s kernel maintainer, merging into
+      <code>wireless-next</code>; five independent <code>Tested-by</code> tags across
+      USB WiFi chipsets).
+    </li>
+    <li>
+      <strong>wireless-regdb audit</strong> &mdash; five country regulatory-database
+      patches (ZA/HK/KR/RU) verified against primary sources
+      (<a href="https://lore.kernel.org/wireless-regdb/?q=f:loukot@gmail.com">patch
+      series on lore</a>). Includes an audit script for ongoing monitoring.
+    </li>
+    <li>
+      <strong>morrownr/rtw89</strong> &mdash;
+      <a href="https://github.com/morrownr/rtw89/pull/76">PR #76</a> backports the
+      in-kernel fix to the out-of-tree driver.
+    </li>
+    <li>
+      <strong>Fedora bug 2458629</strong> &mdash;
+      <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2458629">filed
+      a reproducer and root-cause analysis</a> for a wpa_supplicant MLO
+      reassociation race.
+    </li>
+  </ul>
+</section>
