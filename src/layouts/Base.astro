@@ -5,15 +5,20 @@ export interface Props {
   title?: string;
   description?: string;
   canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'profile';
 }
 
 const {
   title = 'Louis Kotze — Senior Full-Stack Engineer · Linux Kernel Contributor',
   description = 'Louis Kotze — senior full-stack engineer and Linux kernel contributor. Writes code that ships upstream.',
   canonical,
+  ogImage = '/og-image.png',
+  ogType = 'website',
 } = Astro.props;
 
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
+const ogImageURL = new URL(ogImage, Astro.site).toString();
 ---
 <!doctype html>
 <html lang="en">
@@ -27,33 +32,49 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:site_name" content="louiskotze.dev" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Louis Kotze — Senior Full-Stack Engineer and Linux Kernel Contributor" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <link rel="me" href="https://github.com/louis-kotze" />
+    <link rel="me" href="https://linkedin.com/in/louis-kotze" />
+    <link rel="me" href="mailto:louis@louiskotze.dev" />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <slot name="head" />
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <header class="site-header">
       <a href="/" class="brand">louis kotze</a>
       <nav>
         <a href="/">Home</a>
-        <a href="/blog">Writing</a>
+        <a href="/about/">About</a>
+        <a href="/blog/">Writing</a>
         <a href="https://github.com/louis-kotze">GitHub</a>
       </nav>
     </header>
-    <main>
+    <main id="main">
       <slot />
     </main>
     <footer class="site-footer">
       <div>
         Built with <a href="https://astro.build">Astro</a>, hosted on
-        <a href="https://pages.cloudflare.com">Cloudflare Pages</a>. Source
-        on <a href="https://github.com/louis-kotze/louiskotze.dev">GitHub</a>.
+        <a href="https://pages.cloudflare.com">Cloudflare Pages</a>.
+        <a href="https://github.com/louis-kotze/louiskotze.dev">View source</a>.
+        Commits signed with ed25519 (<a href="/about/#verify">verify</a>).
       </div>
       <div>
         Code: MIT &middot; Content: CC&nbsp;BY&nbsp;4.0

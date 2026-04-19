@@ -1,0 +1,164 @@
+---
+import Base from '../layouts/Base.astro';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Louis Kotze',
+  alternateName: 'loukot',
+  url: 'https://louiskotze.dev/',
+  mainEntityOfPage: 'https://louiskotze.dev/about/',
+  jobTitle: 'Senior Full-Stack Engineer',
+  description:
+    'Senior full-stack engineer and Linux kernel contributor based in Stilbay, South Africa. Currently leading a team at iOCO Digital delivering data-visualization platform features for Takeda, while also shipping patches upstream to the Linux kernel and wireless regulatory database.',
+  email: 'mailto:louis@louiskotze.dev',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Stilbay',
+    addressRegion: 'Western Cape',
+    addressCountry: 'ZA',
+  },
+  worksFor: {
+    '@type': 'Organization',
+    name: 'iOCO Digital',
+    url: 'https://iocodigital.com/',
+  },
+  alumniOf: [
+    { '@type': 'Organization', name: 'BMW IT Hub South Africa' },
+    { '@type': 'Organization', name: 'Discovery Limited' },
+    { '@type': 'Organization', name: 'Hello Group' },
+    { '@type': 'CollegeOrUniversity', name: 'Varsity College' },
+  ],
+  knowsAbout: [
+    'Linux kernel development',
+    'wireless networking',
+    'Angular',
+    'TypeScript',
+    'Java',
+    'Kafka',
+    'Kubernetes',
+    'distributed systems',
+    'engineering leadership',
+    'Agile delivery',
+    'mentorship',
+  ],
+  sameAs: [
+    'https://github.com/louis-kotze',
+    'https://linkedin.com/in/louis-kotze',
+    'https://lore.kernel.org/all/?q=f:loukot@gmail.com',
+  ],
+};
+---
+<Base
+  title="About — Louis Kotze"
+  description="Senior full-stack engineer and Linux kernel contributor, based in South Africa. Ten-plus years across FinTech, automotive, and pharmaceuticals."
+  ogType="profile"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} slot="head" />
+
+  <h1>About</h1>
+
+  <p class="lede">
+    Senior full-stack engineer and Linux kernel contributor, based in Stilbay
+    on the southern coast of South Africa. Ten-plus years across FinTech,
+    automotive, and pharmaceuticals — currently leading a team at
+    <a href="https://iocodigital.com">iOCO Digital</a> delivering
+    data-visualization platform features for Takeda, while shipping patches
+    upstream to the Linux kernel and the wireless regulatory database.
+  </p>
+
+  <h2>How I work</h2>
+  <p>
+    I started with Agile/Scrum a decade ago and ended up internalising the
+    principles more than the ceremonies: transparency, regular reflection,
+    iteration over perfection. That frame has travelled everywhere since —
+    into engineering management, upstream contribution, even my personal
+    productivity. Most of what I write here is about applying that
+    discipline in new contexts, including with AI as a working partner.
+  </p>
+  <p>
+    The <a href="/blog/">writing</a> is where the detail lives.
+  </p>
+
+  <h2>Open-source &amp; upstream</h2>
+  <ul>
+    <li>
+      Linux kernel (<code>linux-wireless</code>) — RTL8922AU USB RF-calibration
+      fix, Acked by Realtek&rsquo;s kernel maintainer, merging into
+      <code>wireless-next</code>.
+      <a href="https://lore.kernel.org/linux-wireless/20260416045536.817930-1-loukot@gmail.com/">patch
+      on lore</a>.
+    </li>
+    <li>
+      wireless-regdb — five country regulatory-database patches across
+      South Africa, Hong Kong, Korea, and Russia, verified against primary
+      sources (SCRF, MSIT, OFCA, ETSI).
+      <a href="https://lore.kernel.org/wireless-regdb/?q=f:loukot@gmail.com">patch
+      series</a>.
+    </li>
+    <li>
+      <a href="https://github.com/morrownr/rtw89/pull/76">morrownr/rtw89
+      PR #76</a> — out-of-tree backport of the RTL8922AU fix.
+    </li>
+    <li>
+      Filed <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2458629">Fedora
+      bug 2458629</a> with reproducer and root-cause analysis for a
+      wpa_supplicant MLO reassociation race.
+    </li>
+  </ul>
+
+  <h2 id="contact">Contact</h2>
+  <ul>
+    <li><strong>Professional &amp; general:</strong>
+      <a href="mailto:louis@louiskotze.dev">louis@louiskotze.dev</a></li>
+    <li><strong>Kernel &amp; upstream work:</strong>
+      <a href="mailto:loukot@gmail.com">loukot@gmail.com</a> — the address my
+      kernel patches are attributed to on
+      <a href="https://lore.kernel.org/all/?q=f:loukot@gmail.com">lore.kernel.org</a>.
+    </li>
+    <li><strong>GitHub:</strong>
+      <a href="https://github.com/louis-kotze">github.com/louis-kotze</a></li>
+    <li><strong>LinkedIn:</strong>
+      <a href="https://linkedin.com/in/louis-kotze">linkedin.com/in/louis-kotze</a></li>
+  </ul>
+
+  <h2 id="verify">Verify my commits</h2>
+  <p>
+    Every commit I push from my primary machine is signed with an SSH
+    (ed25519) key. GitHub shows a <strong>Verified</strong> badge on the
+    commit when the key below is on my account.
+  </p>
+
+  <h3>Public key</h3>
+  <pre><code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKAYsuKIn3ngx+0CpvawsAZVLR7dY4pHA8BPAkzRM5d loukot@gmail.com</code></pre>
+
+  <h3>Fingerprint</h3>
+  <pre><code>SHA256:AlxMiAoC8XMhauBqgjZr3tN8VKo9neq8DJIPwxH1whM</code></pre>
+
+  <p class="muted">
+    To verify a commit locally: add the public key above to your
+    <code>allowed_signers</code> file, point <code>git</code> at it with
+    <code>git config gpg.ssh.allowedSignersFile &lt;path&gt;</code>, then
+    run <code>git log --show-signature</code> on a commit from this
+    repository.
+  </p>
+
+  <h2>Elsewhere</h2>
+  <p>
+    I run <a href="https://prolificstudio.co.za">Prolific Studio</a> as a
+    small consultancy. If my open-source work has been useful to you,
+    consider
+    <a href="https://ko-fi.com/prolificstudio">supporting it via Ko-fi</a>
+    or <a href="https://buymeacoffee.com/prolificdev">Buy Me a Coffee</a>.
+  </p>
+
+  <h2>Colophon</h2>
+  <p>
+    This site is built with <a href="https://astro.build">Astro</a> and
+    hosted on <a href="https://pages.cloudflare.com">Cloudflare Pages</a>.
+    The source is public at
+    <a href="https://github.com/louis-kotze/louiskotze.dev">github.com/louis-kotze/louiskotze.dev</a>
+    — MIT on code, CC BY 4.0 on content. No analytics, no cookies, no
+    trackers.
+  </p>
+</Base>

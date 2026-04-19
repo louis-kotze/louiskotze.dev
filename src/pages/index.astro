@@ -4,8 +4,55 @@ import Hero from '../components/Hero.astro';
 import OpenSource from '../components/OpenSource.astro';
 import Mentorship from '../components/Mentorship.astro';
 import Contact from '../components/Contact.astro';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Louis Kotze',
+  alternateName: 'loukot',
+  url: 'https://louiskotze.dev/',
+  jobTitle: 'Senior Full-Stack Engineer',
+  description:
+    'Senior full-stack engineer and Linux kernel contributor. Ships production software for enterprise clients and patches upstream to the Linux kernel and wireless regulatory database.',
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'Western Cape',
+    addressCountry: 'ZA',
+  },
+  worksFor: {
+    '@type': 'Organization',
+    name: 'iOCO Digital',
+    url: 'https://iocodigital.com/',
+  },
+  knowsAbout: [
+    'Linux kernel development',
+    'wireless networking',
+    'Angular',
+    'TypeScript',
+    'distributed systems',
+    'engineering leadership',
+    'Agile delivery',
+  ],
+  sameAs: [
+    'https://github.com/louis-kotze',
+    'https://linkedin.com/in/louis-kotze',
+    'https://lore.kernel.org/all/?q=f:loukot@gmail.com',
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  url: 'https://louiskotze.dev/',
+  name: 'louiskotze.dev',
+  description: 'Personal site and blog for Louis Kotze — senior full-stack engineer and Linux kernel contributor.',
+  author: { '@type': 'Person', name: 'Louis Kotze' },
+};
 ---
 <Base>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} slot="head" />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(websiteSchema)} slot="head" />
+
   <Hero />
   <OpenSource />
   <Mentorship />
