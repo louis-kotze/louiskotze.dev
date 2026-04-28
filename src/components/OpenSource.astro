@@ -7,26 +7,32 @@
       <strong>Linux kernel (linux-wireless)</strong> &mdash; authored the
       RTL8922AU USB RF-calibration fix
       (<a href="https://lore.kernel.org/linux-wireless/20260416045536.817930-1-loukot@gmail.com/">v3
-      on lore</a>, Acked by Realtek&rsquo;s kernel maintainer, merging into
-      <code>wireless-next</code>; five independent <code>Tested-by</code> tags across
-      USB WiFi chipsets).
+      on lore</a>, Acked by Realtek&rsquo;s kernel maintainer, awaiting
+      merge window; five independent <code>Tested-by</code> tags across USB
+      WiFi chipsets) and a
+      <a href="https://lore.kernel.org/linux-wireless/20260414122728.92234-1-loukot@gmail.com/">cfg80211
+      MLO group-key error-message grammar fix</a> (Accepted by Johannes Berg).
     </li>
     <li>
       <strong>wireless-regdb audit</strong> &mdash; five country regulatory-database
-      patches (ZA/HK/KR/RU/UA) verified against primary sources
-      (<a href="https://lore.kernel.org/wireless-regdb/?q=f:loukot@gmail.com">patch
-      series on lore</a>). Includes an audit script for ongoing monitoring.
+      patches verified against primary sources (ICASA, OFCA, MSIT, SCRF, ETSI).
+      UA / HK / RU / ZA merged into <code>wens/wireless-regdb</code> in
+      April 2026; KR in v3 review. Plus a Reviewed-by on a peer patch
+      widening RU 6 GHz channel width.
+      <a href="https://lore.kernel.org/wireless-regdb/?q=f:loukot@gmail.com">Patch
+      series on lore.</a> Includes an audit script for ongoing monitoring.
     </li>
     <li>
       <strong>morrownr/rtw89</strong> &mdash;
-      <a href="https://github.com/morrownr/rtw89/pull/76">PR #76</a> backports the
-      in-kernel fix to the out-of-tree driver.
+      <a href="https://github.com/morrownr/rtw89/pull/76">PR #76</a> backports
+      the in-kernel RF-calibration fix to the out-of-tree DKMS driver
+      (merged April 2026).
     </li>
     <li>
       <strong>Fedora bug 2458629</strong> &mdash;
       <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2458629">filed
       a reproducer and root-cause analysis</a> for a wpa_supplicant MLO
-      reassociation race.
+      reassociation race; assigned, in triage.
     </li>
   </ul>
 </section>

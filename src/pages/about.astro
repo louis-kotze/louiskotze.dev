@@ -61,7 +61,7 @@ const personSchema = {
   <p class="lede">
     Senior full-stack engineer and Linux kernel contributor, based in Stilbay
     on the southern coast of South Africa. Ten-plus years across FinTech,
-    automotive, and pharmaceuticals — currently leading a team at
+    automotive, and pharmaceuticals. Currently leading a team at
     <a href="https://iocodigital.com">iOCO Digital</a> delivering
     data-visualization platform features for Takeda, while shipping patches
     upstream to the Linux kernel and the wireless regulatory database.
@@ -71,7 +71,7 @@ const personSchema = {
   <p>
     I started with Agile/Scrum a decade ago and ended up internalising the
     principles more than the ceremonies: transparency, regular reflection,
-    iteration over perfection. That frame has travelled everywhere since —
+    iteration over perfection. That frame has travelled everywhere since,
     into engineering management, upstream contribution, even my personal
     productivity. Most of what I write here is about applying that
     discipline in new contexts, including with AI as a working partner.
@@ -83,22 +83,27 @@ const personSchema = {
   <h2>Open-source &amp; upstream</h2>
   <ul>
     <li>
-      Linux kernel (<code>linux-wireless</code>) — RTL8922AU USB RF-calibration
-      fix, Acked by Realtek&rsquo;s kernel maintainer, merging into
-      <code>wireless-next</code>.
-      <a href="https://lore.kernel.org/linux-wireless/20260416045536.817930-1-loukot@gmail.com/">patch
-      on lore</a>.
+      Linux kernel (<code>linux-wireless</code>): RTL8922AU USB RF-calibration
+      fix, Acked by Realtek&rsquo;s kernel maintainer with five independent
+      Tested-by tags, awaiting the merge window.
+      <a href="https://lore.kernel.org/linux-wireless/20260416045536.817930-1-loukot@gmail.com/">Patch
+      on lore</a>. Also a cfg80211 MLO group-key error-message grammar fix,
+      Accepted by Johannes Berg
+      (<a href="https://lore.kernel.org/linux-wireless/20260414122728.92234-1-loukot@gmail.com/">patch</a>).
     </li>
     <li>
-      wireless-regdb — five country regulatory-database patches across
-      South Africa, Hong Kong, Korea, Russia, and Ukraine, verified
-      against primary sources (SCRF, MSIT, OFCA, ETSI).
-      <a href="https://lore.kernel.org/wireless-regdb/?q=f:loukot@gmail.com">patch
-      series</a>.
+      wireless-regdb: five country regulatory-database patches verified
+      against primary sources (ICASA, OFCA, MSIT, SCRF, ETSI). UA, HK, RU,
+      and ZA merged into <code>wens/wireless-regdb</code> in April 2026,
+      with KR in v3 review. Plus a Reviewed-by on a peer patch widening RU
+      6 GHz channel width.
+      <a href="https://lore.kernel.org/wireless-regdb/?q=f:loukot@gmail.com">Patch
+      series on lore</a>.
     </li>
     <li>
       <a href="https://github.com/morrownr/rtw89/pull/76">morrownr/rtw89
-      PR #76</a> — out-of-tree backport of the RTL8922AU fix.
+      PR #76</a>: out-of-tree DKMS backport of the RTL8922AU fix, merged
+      April 2026.
     </li>
     <li>
       Filed <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2458629">Fedora
