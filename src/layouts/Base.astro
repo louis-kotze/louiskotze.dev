@@ -10,8 +10,8 @@ export interface Props {
 }
 
 const {
-  title = 'Louis Kotze — Senior Full-Stack Engineer · Linux Kernel Contributor',
-  description = 'Louis Kotze — senior full-stack engineer and Linux kernel contributor. Writes code that ships upstream.',
+  title = 'Louis Kotze | Senior Full-Stack Engineer · Linux Kernel Contributor',
+  description = 'Louis Kotze, senior full-stack engineer and Linux kernel contributor. Writes code that ships upstream.',
   canonical,
   ogImage = '/og-image.png',
   ogType = 'website',
@@ -42,7 +42,7 @@ const ogImageURL = new URL(ogImage, Astro.site).toString();
     <meta property="og:image" content={ogImageURL} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Louis Kotze — Senior Full-Stack Engineer and Linux Kernel Contributor" />
+    <meta property="og:image:alt" content="Louis Kotze, Senior Full-Stack Engineer and Linux Kernel Contributor" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -54,6 +54,7 @@ const ogImageURL = new URL(ogImage, Astro.site).toString();
     <link rel="me" href="mailto:louis@louiskotze.dev" />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="louiskotze.dev" href="/rss.xml" />
 
     <slot name="head" />
   </head>
