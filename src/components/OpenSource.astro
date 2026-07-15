@@ -14,6 +14,15 @@
       MLO group-key error-message grammar fix</a> (Accepted by Johannes Berg).
     </li>
     <li>
+      <strong>NetworkManager:</strong> authored Wi-Fi 7 MLO awareness for
+      the daemon&rsquo;s background-scan logic
+      (<a href="https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/merge_requests/2405">MR
+      !2405</a>, merged July 2026): parses the AP-MLD address from the
+      Multi-Link element so a single-AP MLO association keeps the relaxed
+      scan cadence, eliminating scan-induced traffic stalls. Landed after
+      a five-revision review with the core maintainers.
+    </li>
+    <li>
       <strong>wireless-regdb audit:</strong> five country regulatory-database
       patches (ZA, HK, RU, KR, UA) verified against primary sources (ICASA, OFCA,
       MSIT, SCRF, ETSI), all merged into <code>wens/wireless-regdb</code> in
@@ -35,6 +44,13 @@
       <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2458629">filed
       a reproducer and root-cause analysis</a> for a wpa_supplicant MLO
       reassociation race; assigned, in triage.
+    </li>
+    <li>
+      <strong>In review:</strong> 7 further patches across
+      <code>wpa_supplicant</code> (hostap) and linux-wireless, covering
+      Wi-Fi 7 MLO association fixes and EHT capability advertising.
+      <a href="https://lore.kernel.org/all/?q=f:loukot@gmail.com">All
+      submissions on lore.</a>
     </li>
   </ul>
 </section>
