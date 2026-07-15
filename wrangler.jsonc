@@ -1,0 +1,11 @@
+{
+  // Static-assets-only Worker. Without this file, `npx wrangler deploy`
+  // (the Workers Builds deploy command) enters an interactive setup flow
+  // that runs `astro add cloudflare` and fails in CI.
+  "name": "louiskotze-dev",
+  "compatibility_date": "2026-07-15",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
