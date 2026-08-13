@@ -2,16 +2,30 @@
 ---
 <section>
   <h2>Open-source &amp; upstream</h2>
+  <p>
+    17 commits merged across five upstream projects, plus a
+    <code>Reviewed-by</code> credit on another contributor&rsquo;s
+    regulatory analysis.
+  </p>
   <ul>
     <li>
-      <strong>Linux kernel (linux-wireless):</strong> authored the
+      <strong>wpa_supplicant (hostap):</strong>
+      <a href="https://git.w1.fi/cgit/hostap/log/?qt=author&amp;q=Kotze">seven
+      commits merged</a> in July&ndash;August 2026 fixing Wi-Fi 7 multi-link
+      (MLO) association: stale per-link BSS entries, ML-probe channel
+      scanning, per-link key clearing, duplicated association-request IEs,
+      and a PMKSA-caching deauthentication fallback &mdash; with two hwsim
+      regression tests. Found and reproduced against real AP hardware;
+      ships in the 2.13 release.
+    </li>
+    <li>
+      <strong>Linux kernel (mainline):</strong> authored the
       RTL8922AU USB RF-calibration fix
       (<a href="https://lore.kernel.org/linux-wireless/20260416045536.817930-1-loukot@gmail.com/">v3
-      on lore</a>) merged into Ping-Ke Shih&rsquo;s
-      <code>rtw-next</code> tree in April 2026, with five independent
-      <code>Tested-by</code> tags across USB WiFi chipsets. Also a
+      on lore</a>), with five independent <code>Tested-by</code> tags across
+      USB WiFi chipsets. Also a
       <a href="https://lore.kernel.org/linux-wireless/20260414122728.92234-1-loukot@gmail.com/">cfg80211
-      MLO group-key error-message grammar fix</a> (Accepted by Johannes Berg).
+      MLO group-key error-message fix</a>. Both now in mainline.
     </li>
     <li>
       <strong>NetworkManager:</strong> authored Wi-Fi 7 MLO awareness for
@@ -23,13 +37,15 @@
       a five-revision review with the core maintainers.
     </li>
     <li>
-      <strong>wireless-regdb audit:</strong> five country regulatory-database
-      patches (ZA, HK, RU, KR, UA) verified against primary sources (ICASA, OFCA,
-      MSIT, SCRF, ETSI), all merged into <code>wens/wireless-regdb</code> in
-      April 2026. Plus a <code>Reviewed-by</code> on a community-submitted
-      RU 6 GHz 320 MHz patch, applied to <code>wens/wireless-regdb</code> master
-      on 2026-04-30: six total commits across five jurisdictions in one month,
-      including first review credit on someone else's regulatory analysis.
+      <strong>wireless-regdb audit:</strong> seven regulatory-database
+      commits merged across six jurisdictions (ZA, HK, RU, KR, UA, TG), each
+      verified against the primary regulatory instrument (ICASA, OFCA, MSIT,
+      SCRF, ETSI). Plus a <code>Reviewed-by</code> on a community-submitted
+      RU 6 GHz 320 MHz patch &mdash; first review credit on someone else's
+      regulatory analysis. Where the published instrument left a limit blank,
+      I corresponded directly with the national regulator (ARCEP Burkina Faso)
+      and obtained a written ruling on the applicable 6 GHz limits before
+      writing the patch.
       <a href="https://lore.kernel.org/wireless-regdb/?q=f:loukot@gmail.com">Patch
       series on lore.</a> Includes an audit script for ongoing monitoring.
     </li>
@@ -46,9 +62,8 @@
       reassociation race; assigned, in triage.
     </li>
     <li>
-      <strong>In review:</strong> 7 further patches across
-      <code>wpa_supplicant</code> (hostap) and linux-wireless, covering
-      Wi-Fi 7 MLO association fixes and EHT capability advertising.
+      <strong>In review:</strong> a cfg80211 patch improving the diagnostics
+      when an association BSS lookup fails.
       <a href="https://lore.kernel.org/all/?q=f:loukot@gmail.com">All
       submissions on lore.</a>
     </li>
