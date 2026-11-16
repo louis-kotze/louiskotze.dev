@@ -8,8 +8,8 @@ Hosted at [louiskotze.dev](https://louiskotze.dev).
 ## Stack
 
 - [Astro](https://astro.build) — static-first, Markdown-native
-- [Cloudflare Pages](https://pages.cloudflare.com) — hosting +
-  auto-deploy on push
+- [Cloudflare Workers](https://workers.cloudflare.com) — static-asset
+  hosting, auto-deployed on push by Workers Builds
 - [Cloudflare DNS](https://dash.cloudflare.com) — DNS for `louiskotze.dev`
 - Plain CSS with custom properties; light/dark mode via
   `prefers-color-scheme`
@@ -65,7 +65,7 @@ npm run preview      # serves the built site locally
 2. Edit frontmatter (`title`, `description`, `pubDate`, `tags`)
 3. Write the post body in Markdown
 4. Set `draft: false` when ready
-5. `git commit`, `git push` — Cloudflare Pages auto-deploys
+5. `git commit`, `git push` — Workers Builds auto-deploys
 
 Posts with `draft: true` are excluded from both the list and the
 generated routes, so work-in-progress never appears on the live site.
