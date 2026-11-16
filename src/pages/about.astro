@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import OpenSource from '../components/OpenSource.astro';
 
 const personSchema = {
   '@context': 'https://schema.org',
@@ -10,7 +11,7 @@ const personSchema = {
   mainEntityOfPage: 'https://louiskotze.dev/about/',
   jobTitle: 'Senior Full-Stack Engineer',
   description:
-    'Senior full-stack engineer and Linux kernel contributor based in Stilbay, South Africa. Currently delivering enterprise platform engagements through iOCO Digital, while also shipping patches upstream to the Linux kernel, NetworkManager, and the wireless regulatory database.',
+    'Senior full-stack engineer and Linux kernel contributor based in Stilbay, South Africa. Lead developer at iOCO Digital on consulting work for enterprise clients, and an upstream contributor to the Linux kernel, wpa_supplicant, NetworkManager, and the wireless regulatory database.',
   email: 'mailto:louis@louiskotze.dev',
   address: {
     '@type': 'PostalAddress',
@@ -63,9 +64,9 @@ const personSchema = {
     on the southern coast of South Africa. Ten-plus years across FinTech,
     automotive, and pharmaceuticals. Currently delivering enterprise
     platform engagements through
-    <a href="https://iocodigital.com">iOCO Digital</a>, while shipping
-    patches upstream to the Linux kernel, NetworkManager, and the wireless
-    regulatory database.
+    <a href="https://iocodigital.com">iOCO Digital</a>. Upstream
+    contributor to the Linux kernel, wpa_supplicant, NetworkManager, and
+    the wireless regulatory database.
   </p>
 
   <h2>How I work</h2>
@@ -81,39 +82,7 @@ const personSchema = {
     The <a href="/blog/">writing</a> is where the detail lives.
   </p>
 
-  <h2>Open-source &amp; upstream</h2>
-  <ul>
-    <li>
-      Linux kernel (<code>linux-wireless</code>): RTL8922AU USB RF-calibration
-      fix, merged into Ping-Ke Shih&rsquo;s <code>rtw-next</code> tree in
-      April 2026 with five independent Tested-by tags across USB chipsets.
-      <a href="https://lore.kernel.org/linux-wireless/20260416045536.817930-1-loukot@gmail.com/">Patch
-      on lore</a>. Also a cfg80211 MLO group-key error-message grammar fix,
-      Accepted by Johannes Berg
-      (<a href="https://lore.kernel.org/linux-wireless/20260414122728.92234-1-loukot@gmail.com/">patch</a>).
-    </li>
-    <li>
-      wireless-regdb: five country regulatory-database patches (ZA, HK, RU, KR, UA)
-      verified against primary sources (ICASA, OFCA, MSIT, SCRF, ETSI), all merged
-      into <code>wens/wireless-regdb</code> in April 2026. Plus a
-      <code>Reviewed-by</code> on a community-submitted RU 6 GHz 320 MHz patch,
-      applied to <code>wens/wireless-regdb</code> master on 2026-04-30: six total
-      commits across five jurisdictions in one month, including first review
-      credit on someone else's regulatory analysis.
-      <a href="https://lore.kernel.org/wireless-regdb/?q=f:loukot@gmail.com">Patch
-      series on lore</a>.
-    </li>
-    <li>
-      <a href="https://github.com/morrownr/rtw89/pull/76">morrownr/rtw89
-      PR #76</a>: out-of-tree DKMS backport of the RTL8922AU fix, merged
-      April 2026.
-    </li>
-    <li>
-      Filed <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2458629">Fedora
-      bug 2458629</a> with reproducer and root-cause analysis for a
-      wpa_supplicant MLO reassociation race.
-    </li>
-  </ul>
+  <OpenSource />
 
   <h2 id="contact">Contact</h2>
   <ul>
@@ -122,7 +91,7 @@ const personSchema = {
     <li><strong>Kernel &amp; upstream work:</strong>
       <a href="mailto:loukot@gmail.com">loukot@gmail.com</a> (the address my
       kernel patches are attributed to on
-      <a href="https://lore.kernel.org/all/?q=f:loukot@gmail.com">lore.kernel.org</a>.
+      <a href="https://lore.kernel.org/all/?q=f:loukot@gmail.com">lore.kernel.org</a>).
     </li>
     <li><strong>GitHub:</strong>
       <a href="https://github.com/louis-kotze">github.com/louis-kotze</a></li>
